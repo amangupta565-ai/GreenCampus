@@ -1,0 +1,325 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071713">
+  <title>GreenCampus | Smart Sustainability</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="hackthon.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#">
+        <span class="brand-mark">
+          <svg viewBox="0 0 40 40">
+            <path d="M32 5C18 6 7 13 7 25c0 5 4 8 8 7C28 29 33 17 32 5Z" fill="currentColor"/>
+            <path d="M8 34C13 25 19 19 28 12" fill="none" stroke="#09241b" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span>
+          <strong>Green<span>Campus</span></strong>
+          <small>Smarter resources. Greener tomorrow.</small>
+        </span>
+      </a>
+
+      <div class="side-label">WORKSPACE</div>
+
+      <nav class="nav-list">
+        <button class="nav-link active" data-page="Dashboard"><span>▦</span> Dashboard</button>
+        <button class="nav-link" data-page="Rooms"><span>⌂</span> Rooms</button>
+        <button class="nav-link" data-page="Resources"><span>♧</span> Resources</button>
+        <button class="nav-link" data-page="Reports"><span>▤</span> Reports</button>
+        <button class="nav-link" data-page="Settings"><span>⚙</span> Settings</button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="leaf-art">♧</div>
+        <div class="impact-card">
+          <span class="mini-leaf">✦</span>
+          <h3>Small changes.<br>Big impact.</h3>
+          <p>Every resource saved is a step toward a greener campus.</p>
+          <div class="impact-line"><span></span></div>
+          <small>YOUR CAMPUS, YOUR PLANET</small>
+        </div>
+        <div class="side-version">GREENCAMPUS <span>v1.0.0</span></div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu">☰</button>
+
+        <div class="breadcrumb">
+          <span>Workspace</span><b>/</b>
+          <strong id="pageName">Dashboard</strong>
+        </div>
+
+        <label class="search-box">
+          <span>⌕</span>
+          <input id="searchInput" type="search" placeholder="Search rooms, resources..." aria-label="Search rooms and resources">
+          <kbd>⌘ K</kbd>
+        </label>
+
+        <div class="top-actions">
+          <button class="icon-button" id="themeButton" title="Toggle glow">☼</button>
+          <span class="top-divider"></span>
+          <div class="avatar">A</div>
+          <div class="admin-label">
+            <strong>AMAN</strong>
+            <small>Campus manager</small>
+          </div>
+          <button class="chevron">⌄</button>
+        </div>
+      </header>
+
+      <section class="welcome-row">
+        <div>
+          <div class="eyebrow"><span class="pulse-dot"></span> SUSTAINABILITY OVERVIEW</div>
+          <h1>Good morning, AMAN <span class="wave">✳</span></h1>
+          <p>Here's how your campus is using resources today.</p>
+        </div>
+        <div class="date-chip">
+          <span>◷</span><span id="todayDate">Campus overview</span><i></i>
+        </div>
+      </section>
+
+      <section class="metric-grid">
+        <article class="metric-card electricity">
+          <div class="metric-top">
+            <span class="metric-icon">ϟ</span>
+            <span class="trend positive">↘ 12%</span>
+          </div>
+          <p class="metric-label">Electricity usage</p>
+          <div class="metric-value"><strong id="electricityTotal">4,800</strong><span>kWh</span></div>
+          <p class="metric-note">Compared with last week</p>
+          <div class="sparkline"><svg viewBox="0 0 240 45" preserveAspectRatio="none"><path d="M0 36 C20 28 24 38 42 29 S66 35 84 22 S106 31 126 17 S148 25 170 12 S201 22 240 4"/></svg></div>
+        </article>
+
+        <article class="metric-card water">
+          <div class="metric-top">
+            <span class="metric-icon">◉</span>
+            <span class="trend positive">↘ 8%</span>
+          </div>
+          <p class="metric-label">Water usage</p>
+          <div class="metric-value"><strong id="waterTotal">32,000</strong><span>L</span></div>
+          <p class="metric-note">Compared with last week</p>
+          <div class="sparkline"><svg viewBox="0 0 240 45" preserveAspectRatio="none"><path d="M0 33 C22 37 25 24 45 29 S70 20 88 27 S110 8 133 18 S161 28 180 11 S212 20 240 7"/></svg></div>
+        </article>
+
+        <article class="metric-card paper">
+          <div class="metric-top">
+            <span class="metric-icon">▤</span>
+            <span class="trend positive">↘ 15%</span>
+          </div>
+          <p class="metric-label">Paper consumption</p>
+          <div class="metric-value"><strong id="paperTotal">6,200</strong><span>sheets</span></div>
+          <p class="metric-note">Compared with last week</p>
+          <div class="sparkline"><svg viewBox="0 0 240 45" preserveAspectRatio="none"><path d="M0 34 C19 20 29 40 49 26 S73 35 92 19 S119 31 141 18 S164 24 185 10 S218 20 240 5"/></svg></div>
+        </article>
+      </section>
+
+      <section class="content-grid">
+        <div class="primary-column">
+          <article class="panel chart-panel">
+            <div class="panel-heading">
+              <div>
+                <span class="section-icon">⌁</span>
+                <div>
+                  <h2>Resource usage overview</h2>
+                  <p>Track consumption across your campus</p>
+                </div>
+              </div>
+              <div class="period-switch" role="group" aria-label="Chart period">
+                <button class="period active" data-period="7">7D</button>
+                <button class="period" data-period="30">30D</button>
+                <button class="period" data-period="90">3M</button>
+              </div>
+            </div>
+            <div class="chart-wrap"><canvas id="usageChart" aria-label="Resource usage chart"></canvas></div>
+            <div class="chart-legend">
+              <span><i class="legend-dot green"></i>Electricity</span>
+              <span><i class="legend-dot blue"></i>Water</span>
+              <span><i class="legend-dot yellow"></i>Paper</span>
+            </div>
+          </article>
+
+          <article class="panel rooms-panel">
+            <div class="panel-heading">
+              <div>
+                <span class="section-icon">⌂</span>
+                <div>
+                  <h2>Room-wise usage</h2>
+                  <p>Resource consumption by location</p>
+                </div>
+              </div>
+              <button class="text-button" data-page-link="Rooms">View all <span>↗</span></button>
+            </div>
+
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th>ROOM / LOCATION</th>
+                    <th>ELECTRICITY</th>
+                    <th>WATER</th>
+                    <th>PAPER</th>
+                    <th>STATUS</th>
+                  </tr>
+                </thead>
+                <tbody id="roomTable"></tbody>
+              </table>
+            </div>
+            <div class="table-footer">
+              <span id="roomCount">5 locations monitored</span>
+              <button class="subtle-button" id="addRecordBottom">＋ Add usage record</button>
+            </div>
+          </article>
+        </div>
+
+        <div class="secondary-column">
+          <article class="panel distribution-panel">
+            <div class="panel-heading">
+              <div>
+                <span class="section-icon">◉</span>
+                <div>
+                  <h2>Resource distribution</h2>
+                  <p>Monthly usage mix</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="distribution-content">
+              <div class="donut">
+                <div class="donut-center"><strong>87.8k</strong><span>Total units*</span></div>
+              </div>
+              <div class="distribution-legend">
+                <div><i class="legend-dot green"></i><span>Electricity<small>54.7%</small></span></div>
+                <div><i class="legend-dot blue"></i><span>Water<small>36.4%</small></span></div>
+                <div><i class="legend-dot yellow"></i><span>Paper<small>8.9%</small></span></div>
+              </div>
+            </div>
+            <p class="footnote">*Illustrative index across different units.</p>
+          </article>
+
+          <article class="panel alerts-panel">
+            <div class="panel-heading">
+              <div>
+                <span class="section-icon alert-icon">!</span>
+                <div>
+                  <h2>Recent alerts</h2>
+                  <p>Items that may need attention</p>
+                </div>
+              </div>
+              <span class="count-badge" id="alertCount">2 active</span>
+            </div>
+            <div id="alertsList" class="alerts-list"></div>
+          </article>
+
+          <article class="panel recommendations-panel">
+            <div class="panel-heading">
+              <div>
+                <span class="section-icon bulb">✦</span>
+                <div>
+                  <h2>Smart recommendations</h2>
+                  <p>Small steps, measurable impact</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="recommendation">
+              <span class="rec-icon green-bg">ϟ</span>
+              <div>
+                <strong>Switch off unused lights</strong>
+                <p>Computer Lab · B-101</p>
+                <small>Potential saving: <b>12 kWh/day</b></small>
+              </div>
+              <span class="rec-arrow">↗</span>
+            </div>
+
+            <div class="recommendation">
+              <span class="rec-icon blue-bg">◉</span>
+              <div>
+                <strong>Check for possible water leaks</strong>
+                <p>Main Building · Room 203</p>
+                <small>Review unusually high usage</small>
+              </div>
+              <span class="rec-arrow">↗</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="bottom-actions">
+        <div>
+          <span class="eyebrow">TAKE ACTION</span>
+          <h2>Make your next move count.</h2>
+          <p>Keep your campus efficient, one record at a time.</p>
+        </div>
+        <div class="action-buttons">
+          <button class="action-button primary" id="addRecordButton">
+            <span>＋</span><div><strong>Add usage record</strong><small>Update a room's data</small></div>
+          </button>
+          <button class="action-button" id="downloadCsv">
+            <span>⇩</span><div><strong>Export CSV</strong><small>Download room data</small></div>
+          </button>
+        </div>
+      </section>
+
+      <footer>
+        <span>© 2026 GreenCampus <i></i> Built for a greener tomorrow.</span>
+        <span class="demo-label"><span></span> DEMO DATA · NOT LIVE METER READINGS</span>
+      </footer>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true">
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-heading">
+        <div>
+          <span class="eyebrow">RESOURCE MANAGEMENT</span>
+          <h2 id="modalTitle">Add usage record</h2>
+          <p>Enter a reading to update your dashboard.</p>
+        </div>
+        <button class="close-modal" id="closeModal" aria-label="Close">×</button>
+      </div>
+
+      <form id="usageForm">
+        <label>Room or location
+          <input name="room" required maxlength="60" placeholder="e.g. Science Lab (A-104)">
+        </label>
+        <div class="form-grid">
+          <label>Electricity (kWh)
+            <input name="electricity" type="number" min="0" step="any" value="100" required>
+          </label>
+          <label>Water (litres)
+            <input name="water" type="number" min="0" step="any" value="500" required>
+          </label>
+        </div>
+        <label>Paper (sheets)
+          <input name="paper" type="number" min="0" step="1" value="50" required>
+        </label>
+        <div class="form-note">Demo data only. High readings may trigger a review alert.</div>
+        <div class="modal-actions">
+          <button type="button" class="subtle-button" id="cancelModal">Cancel</button>
+          <button type="submit" class="submit-button">Save record <span>→</span></button>
+        </div>
+      </form>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="hackthon.js"></script>
+</body>
+</html>
